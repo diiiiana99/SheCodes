@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ReactComponent as LogoIcon } from "../assets/logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Nav>
       <Container>
-        <LogoIcon />
+      <MenuLink href="/" >SheCodes</MenuLink>
+        
         <Hamburger onClick={() => setIsOpen(!isOpen)}>
           <span />
           <span />
@@ -15,9 +15,11 @@ const Navbar = () => {
         </Hamburger>
         <Menu isOpen={isOpen}>
           <LinkWrapper>
-            <MenuLink href="">Search</MenuLink>
-            <MenuLink href="">Login</MenuLink>
-            <Button>Join Now</Button>
+            <MenuLink href="/menu">About Us</MenuLink>
+            <MenuLink href="/pricing">Our Plans </MenuLink>
+            <MenuLink href="/alumni">Our Alumni</MenuLink>
+
+            <a href='/signup'><Button>Join Now</Button></a>
           </LinkWrapper>
         </Menu>
       </Container>
@@ -26,6 +28,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const Logo = styled.div``
 
 const Button = styled.button`
   font-size: 0.8rem;
@@ -51,17 +55,19 @@ const Button = styled.button`
 
 const MenuLink = styled.a`
   text-decoration: none;
-  color: #858586;
-  font-size: 0.9rem;
+  color: #f774c5;
+  font-size: 1.7rem;
   padding: 0.7rem 1.5rem;
   transition: all 0.2s ease-in;
   border-radius: 0.5rem;
   font-weight: 500;
 
+
   &:hover {
-    color: #7781d4;
-    background: #e7e9fc;
+    color:   #f774c5;
+    background:   #f774c5;
   }
+ 
 `;
 
 const Container = styled.div`

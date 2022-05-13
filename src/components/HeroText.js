@@ -4,8 +4,8 @@ import styled from "styled-components";
 const HeroText = () => {
   return (
     <Container>
-      <h5>Online education for people of all ages</h5>
-      <h1>Learn</h1>
+      <h5>Coding Workshops for Women</h5>
+      <h1>Code</h1>
       <h1>Anything.</h1>
       <h1>Anytime.</h1>
       <h1>Anywhere.</h1>
@@ -20,28 +20,28 @@ const HeroText = () => {
 const BtnContainer = styled.div`
   margin-top: 2rem;
   button {
-    background: #81d1ff;
+    background:  #f774c5;
     border: none;
     padding: 0.9rem 1.1rem;
     color: #fff;
-    border-radius: 1rem;
-    box-shadow: 0px 13px 24px -7px #81d1ff;
+    border-radius: 1rem ;
+    box-shadow: 0px 13px 24px -7px #f774c5;
     transition: all 0.3s ease-in-out;
     margin: 0.5rem;
     font-size: 0.8rem;
     cursor: pointer;
     &:hover {
-      box-shadow: 0px 17px 16px -11px #81d1ff;
+      box-shadow: 0px 17px 16px -11px  #f774c5;
       transform: translateY(-5px);
     }
   }
 
   .readmore {
-    color: #81d1ff;
+    color: white;
     background: transparent;
-    border: 3px solid #81d1ff;
+    border: 3px solid #f774c5;
     &:hover {
-      box-shadow: 0px 17px 16px -11px #81d1ff;
+      box-shadow: 0px 17px 16px -11px #f774c5;
       transform: translateY(-5px);
     }
   }
@@ -50,9 +50,9 @@ const BtnContainer = styled.div`
 const Container = styled.div`
   padding: 1rem;
   h5 {
-    color: #515151;
+    color: #fff;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
   }
   h1 {

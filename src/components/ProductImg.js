@@ -1,28 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import Tilt from "react-tilt";
 import image from "../assets/hero.png";
 import bg2 from "../assets/bg2.png";
-import HeroText from "./HeroText";
+import Products from "./Products";
+import Tilt from "react-tilt";
 
-
-const Hero = () => {
-
+const ProductImg = () => {
   return (
     <Container bg2='https://images.unsplash.com/photo-1528459709161-157d86910939?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'>
       <Wrapper>
         <InnerWrapper>
           <Left>
-            <HeroText />
+            <Products />
           </Left>
           <TiltWrapper options={{ max: 25 }}>
-            <Img src='https://cdn3d.iconscout.com/3d/premium/thumb/web-development-4620450-3833097.png' alt="@gouthamgtronics" />
+            <Img src='https://cdn3d.iconscout.com/3d/premium/thumb/work-management-4541065-3773180.png' alt="@gouthamgtronics" />
           </TiltWrapper>
         </InnerWrapper>
       </Wrapper>
-
     </Container>
-     
   );
 };
 
@@ -43,8 +39,8 @@ const TiltWrapper = styled(Tilt)`
 `;
 
 const Img = styled.img`
-  width: 90%;
-  margin-left:40px;
+width: 80%;
+margin-left:80px;
 
 `;
 
@@ -82,4 +78,4 @@ const Container = styled.div`
   background-position: center;
 `;
 
-export default Hero;
+export default ProductImg;

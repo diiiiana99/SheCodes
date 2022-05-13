@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ReactComponent as Logo } from "../assets/logo.svg";
+import { ReactComponent as Logo } from "../assets/logos.svg";
 import { ReactComponent as SearchIcon } from "../assets/search.svg";
 import styled from "styled-components";
 
@@ -10,13 +10,11 @@ const Nav = () => {
       <Container>
         <Logo />
         <Hamburger onClick={() => setIsOpen(!isOpen)}>
-        <span />
-        <span />
-        <span />
+      
       </Hamburger>
         <Wrapper>
             <SearchIcon />
-          <a href="https://www.google.com/">Login</a>
+          <a href="https://www.google.com/">About Us</a>
           <Button>Join Now</Button>
         </Wrapper>
       </Container>
