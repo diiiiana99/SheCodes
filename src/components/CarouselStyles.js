@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 
 export const CarouselImage = styled.img`
 	width: 100%;
-	height: 300px;
+	height: 299px;
 	border-radius: 10px 10px 0 0;
 	object-fit: cover;
 	vertical-align: middle;
@@ -26,7 +26,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const ButtonContainer = styled(Row)`
-margin-top:160px;
+margin-top:159px;
 
 	& svg {
 		margin: 0 1rem;

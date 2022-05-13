@@ -10,6 +10,8 @@ import {
 	BtnContainer,
 } from './CarouselStyles';
 import bg1 from '../assets/bg1.png'
+import Fade from 'react-reveal'
+
 const Carousel = () => {
 	const [sliderRef, setSliderRef] = useState(null);
 
@@ -17,9 +19,11 @@ const Carousel = () => {
 		<Section margin="auto" maxWidth="1300px" padding="20px 70px" inverse  bg1={bg1}>
             <Wrap>
 			<Row justify="space-between" margin="1rem" wrap="wrap">
+				<Fade top>
 				<CarouselHeading width="auto" inverse>
                     SHECODES SUCCESS STORY
 				</CarouselHeading>
+				</Fade>
 				<ButtonContainer>
 					<IconContext.Provider value={{ size: '3rem', color: '#fff7f7' }}>
 						<ArrowLeftOutlined onClick={sliderRef?.slickPrev} />
@@ -27,7 +31,7 @@ const Carousel = () => {
 					</IconContext.Provider>
 				</ButtonContainer>
 			</Row>
-
+			<Fade top>
 			<ReviewSlider {...sliderSettings} ref={setSliderRef}>
 				{data.map((el, index) => (
 					<ImageWrapper key={index}>
@@ -42,6 +46,7 @@ const Carousel = () => {
 					</ImageWrapper>
 				))}
 			</ReviewSlider>
+			</Fade>
             </Wrap>
 		</Section>
 	);

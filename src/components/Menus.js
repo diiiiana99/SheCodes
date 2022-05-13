@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styled from "styled-components";
 import bg2 from "../assets/bg2.png";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
+import Fade from 'react-reveal'
 
 
 
@@ -155,15 +156,19 @@ export default function Menus() {
     <Wrapper slideIndex={slideIndex}>
 
         <Slide bg=''>
+        <Fade top>
           <ImgContainer>
             <Image src='https://cdn3d.iconscout.com/3d/premium/thumb/website-developer-4620455-3833102.png' />
           </ImgContainer>
+          </Fade>
+          <Fade top>
           <InfoContainer>
             <Title>Hands-on Coding Workshops for Women</Title>
             <Desc>Access a new career in Technology</Desc>
             <Button><button> Learn More </button>
 </Button>
           </InfoContainer>
+          </Fade>
         </Slide>
 
     </Wrapper>
@@ -174,14 +179,18 @@ export default function Menus() {
     <Wrapper slideIndex={slideIndex}>
 
         <Slide bg=''>
+          <Fade bottom>
           <ImgContainer >
             <Image src='https://cdn3d.iconscout.com/3d/premium/thumb/web-designing-4620443-3833110.png' />
           </ImgContainer>
+          </Fade>
+          <Fade top>
           <InfoContainer>
             <Title>SheCodes teaches coding skills to busy women</Title>
             <Desc>Highly recommended by over 75,000+ women</Desc>
             <Button><button>Explore More</button></Button>
           </InfoContainer>
+          </Fade>
         </Slide>
 
     </Wrapper>

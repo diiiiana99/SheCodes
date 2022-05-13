@@ -1,6 +1,12 @@
+
+
 import React, { useState } from 'react';
+import Fade from 'react-reveal'
+
 import {
 	FormColumn,
+	Img,
+	ImgWrapper,
 	FormWrapper,
 	FormInput,
 	FormSection,
@@ -8,27 +14,26 @@ import {
 	FormTitle,
 	FormLabel,
 	FormInputRow,
-	FormButton,
 	FormMessage,
 } from './FormStyles';
-import { formContainer } from './globalStyles';
+import { Container, BtnContainer } from './globalStyles';
 import validateForm from './validateForm';
-import styled from "styled-components";
-import Tilt from "react-tilt";
 import bg1 from '../assets/bg1.png'
+import Tilt from 'react-tilt';
+
 
 
 const Form = () => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
-	const [subject, setSubject] = useState('');
-	const [message, setMessage] = useState('');
+	const [password, setPassword] = useState('');
+	const [confirmPass, setConfirmPass] = useState('');
 	const [error, setError] = useState(null);
 	const [success, setSuccess] = useState(null);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const resultError = validateForm({ name, email, subject, message });
+		const resultError = validateForm({ name, email, password, confirmPass });
 
 		if (resultError !== null) {
 			setError(resultError);
@@ -36,10 +41,10 @@ const Form = () => {
 		}
 		setName('');
 		setEmail('');
-		setSubject('');
-		setMessage('');
+		setPassword('');
+		setConfirmPass('');
 		setError(null);
-		setSuccess('Message was sent!');
+		setSuccess('Application was submitted!');
 	};
 
 	const messageVariants = {
@@ -47,41 +52,70 @@ const Form = () => {
 		animate: { y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.4 } },
 	};
 
+	const buttonVariants = {
+		hover: {
+			scale: 1.05,
+			color: '',
+			boxShadow: '0px 0px 8px white',
+			transition: {
+				duration: 0.3,
+				yoyo: Infinity,
+			},
+		},
+	};
+
 	const formData = [
 		{ label: 'Name', value: name, onChange: (e) => setName(e.target.value), type: 'text' },
 		{ label: 'Email', value: email, onChange: (e) => setEmail(e.target.value), type: 'email' },
 		{
-			label: 'Subject',
-			value: subject,
-			onChange: (e) => setSubject(e.target.value),
+			label: 'Password',
+			value: password,
+			onChange: (e) => setPassword(e.target.value),
+			type: 'password',
 		},
 		{
-			label: 'Message',
-			value: message,
-			onChange: (e) => setMessage(e.target.value),
+			label: 'Confirm Password',
+			value: confirmPass,
+			onChange: (e) => setConfirmPass(e.target.value),
+			type: 'password',
 		},
 	];
-
 	return (
-		<FormSection bg1={bg1}>
-			<formContainer>
+		<FormSection  bg1={bg1}>
+            <Fade top>
+			<Container>
+            <Tilt
+								className="Tilt"
+								options={{ max: 15, scale: 1.01, speed: 200 }}
+							>
 				<FormRow>
 					<FormColumn>
+						<ImgWrapper>
+							<Img src="https://cdn3d.iconscout.com/3d/premium/thumb/girl-doing-online-shopping-4657921-3890253.png" alt=""></Img>
+						</ImgWrapper>
+					</FormColumn>
+                 
+					<FormColumn small>
 						<FormTitle>Sign Up</FormTitle>
+                 
 						<FormWrapper onSubmit={handleSubmit}>
 							{formData.map((el, index) => (
 								<FormInputRow key={index}>
-									<FormLabel>{el.label} *</FormLabel>
+									<FormLabel>{el.label}</FormLabel>
 									<FormInput
 										type={el.type}
+										placeholder={`Enter your ${el.label.toLocaleLowerCase()}`}
 										value={el.value}
 										onChange={el.onChange}
 									/>
 								</FormInputRow>
 							))}
 
-							<FormButton type="submit">Let's talk</FormButton>
+							<BtnContainer variants={buttonVariants} whileHover="hover" type="submit">
+								Signup
+							</BtnContainer>
 						</FormWrapper>
+
 						{error && (
 							<FormMessage
 								variants={messageVariants}
@@ -102,39 +136,14 @@ const Form = () => {
 							</FormMessage>
 						)}
 					</FormColumn>
-                    <InnerWrapper>
-                    <TiltWrapper options={{ max: 25 }}>
-                        <Img src='https://cdn3d.iconscout.com/3d/premium/thumb/girl-doing-online-shopping-4657921-3890253.png' alt="@gouthamgtronics" />
-                    </TiltWrapper>
-                </InnerWrapper>
+
 				</FormRow>
-               
-			</formContainer>
+                </Tilt>
+
+			</Container>
+            </Fade>
 		</FormSection>
 	);
 };
 
 export default Form;
-
-
-const TiltWrapper = styled(Tilt)`
-  width: 60%;
-  min-width: 400px;
-  @media (max-width: 670px) {
-    display: none;
-  }
-`;
-
-const Img = styled.img`
-  width: 90%;
-  margin-right:160px;
-
-`;
-
-const InnerWrapper = styled.div`
-  height: 100%;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-`;

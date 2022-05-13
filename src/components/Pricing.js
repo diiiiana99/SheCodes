@@ -17,13 +17,18 @@ import {
 import Tilt from 'react-tilt';
 import bg1 from '../assets/bg1.png'
 import { pricingData } from '../utils/homeData';
+import Fade from 'react-reveal'
+
 
 const Pricing = () => {
 	return (
 		<IconContext.Provider >
 			<PricingSection id="pricing" bg1={bg1}>
 				<PricingWrapper >
+					<Fade top>
 					<PricingHeading>Upcoming Coding Workshops</PricingHeading>
+					</Fade>
+					<Fade top>
 					<TextWrapper
 						color="white"
 						maxWidth="460px"
@@ -36,6 +41,8 @@ const Pricing = () => {
 					Reserve your spot today👩‍💻
 
 					</TextWrapper>
+					</Fade>
+					<Fade top>
 					<PricingContainer>
 						{pricingData.map((card, index) => (
 							<Tilt
@@ -59,6 +66,7 @@ const Pricing = () => {
 							</Tilt>
 						))}
 					</PricingContainer>
+					</Fade>
 				</PricingWrapper>
 			</PricingSection>
 		</IconContext.Provider>

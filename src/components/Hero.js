@@ -4,6 +4,7 @@ import Tilt from "react-tilt";
 import image from "../assets/hero.png";
 import bg2 from "../assets/bg2.png";
 import HeroText from "./HeroText";
+import Fade from 'react-reveal'
 
 
 const Hero = () => {
@@ -13,10 +14,14 @@ const Hero = () => {
       <Wrapper>
         <InnerWrapper>
           <Left>
+            <Fade left>
             <HeroText />
+            </Fade>
           </Left>
           <TiltWrapper options={{ max: 25 }}>
+            <Fade right>
             <Img src='https://cdn3d.iconscout.com/3d/premium/thumb/web-development-4620450-3833097.png' alt="@gouthamgtronics" />
+            </Fade>
           </TiltWrapper>
         </InnerWrapper>
       </Wrapper>

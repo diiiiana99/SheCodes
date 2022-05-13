@@ -2,6 +2,8 @@ import React from 'react';
 import { clientsData } from '../utils/ClientsData';
 import styled from 'styled-components';
 import Tilt from "react-tilt";
+import Fade from 'react-reveal'
+
 
 
 const Clients = () => {
@@ -9,10 +11,13 @@ const Clients = () => {
         <Container bg2='https://images.unsplash.com/photo-1528459709161-157d86910939?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'>
             <Wrapper>
 		<ClientSection id="clients">
+			<Fade top>
 				<ClientTextWrapper>
 					<ClientTitle>Our Clients</ClientTitle>
 					<ClientText>SheCodes Workshops have an overall completion rate of 92% 🙌</ClientText>
 				</ClientTextWrapper>
+				</Fade>
+				<Fade top>
 				<TiltWrapper options={{ max: 25 }}>
 				<ClientRow>
 					{clientsData.map((clients, clientsIndex) => (
@@ -28,6 +33,7 @@ const Clients = () => {
 					))}
 				</ClientRow>
 				</TiltWrapper>
+				</Fade>
 		</ClientSection>
         </Wrapper>
 

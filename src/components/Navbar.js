@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Fade from 'react-reveal'
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Nav>
+
       <Container>
+      <Fade top>
       <MenuLink href="/" >SheCodes</MenuLink>
-        
+      </Fade>
         <Hamburger onClick={() => setIsOpen(!isOpen)}>
           <span />
           <span />
@@ -15,14 +19,17 @@ const Navbar = () => {
         </Hamburger>
         <Menu isOpen={isOpen}>
           <LinkWrapper>
+          <Fade top>
             <MenuLink href="/menu">About Us</MenuLink>
             <MenuLink href="/pricing">Our Plans </MenuLink>
             <MenuLink href="/alumni">Our Alumni</MenuLink>
-
             <a href='/signup'><Button>Join Now</Button></a>
+            </Fade>
+
           </LinkWrapper>
         </Menu>
       </Container>
+   
     </Nav>
   );
 };

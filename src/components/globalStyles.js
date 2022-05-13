@@ -25,6 +25,7 @@ export const Container = styled.div`
 	z-index: 1;
 	width: 100%;
 	max-width: 1300px;
+	overflow:hidden;
 
 	margin: ${({ margin }) => (margin ? margin : '0 auto')};
 	padding: ${({ padding }) => (padding ? padding : '0 50px')};
