@@ -6,7 +6,6 @@ import ProductImg from "./components/ProductImg";
 import Pricing from "./components/Pricing";
 import Clients from "./components/Clients";
 import Carousel from "./components/Carousel";
-import Content from "./components/Content";
 
 import Form from "./components/Form";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
