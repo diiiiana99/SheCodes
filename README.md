@@ -10,7 +10,7 @@ SheCodes is a learning environment for women who are trying to get into tech. Ne
 
 # Demos:
 
-Full Video is at - https://vimeo.com/707940460
+Full Video is at - https://youtu.be/wmqvXji233s
 
 
 
